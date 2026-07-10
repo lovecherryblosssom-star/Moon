@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of a front-end developer and creative writer — crafted with logic, designed with imagination.">
+  <meta name="keywords" content="front-end developer, portfolio, creative writer, web development, UI design">
+  <meta name="author" content="Portfolio">
+  <title>Portfolio — Crafted with Logic. Designed with Imagination.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-flower">✿</div>
+      <p class="loader-text">Crafted with logic. Designed with imagination.</p>
+    </div>
+  </div>
+  <!-- Progress Bar -->
+  <div class="progress-bar" aria-hidden="true"></div>
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <!-- Floating Background Shapes -->
+  <div class="floating-shapes" aria-hidden="true">
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+  </div>
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-dot"></span> Portfolio
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-greeting reveal">
+          <span class="wave">👋</span> Hello, I'm
+        </p>
+        <h1 class="hero-name reveal reveal-delay-1">
+          A <span class="accent">Developer</span><br>& Writer
+        </h1>
+        <p class="hero-tagline reveal reveal-delay-2">
+          Crafted with logic. Designed with imagination.
+        </p>
+        <p class="hero-description reveal reveal-delay-3">
+          I build thoughtful, expressive interfaces where clean code meets creative storytelling.
+          Currently a <span class="typing-text" aria-label="front-end developer">front-end developer</span><span class="typing-cursor" aria-hidden="true">|</span>
+        </p>
+        <div class="hero-cta reveal reveal-delay-4">
+          <a href="#projects" class="btn-primary">
+            View My Work <span aria-hidden="true">→</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Floral Decoration -->
+    <div class="hero-floral" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Petal cluster 1 -->
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.3" transform="rotate(0 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(45 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.2" transform="rotate(90 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(135 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.3" transform="rotate(180 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(225 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.2" transform="rotate(270 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(315 200 200)"/>
+        <!-- Center -->
+        <circle cx="200" cy="200" r="22" fill="currentColor" opacity="0.35"/>
+        <!-- Small accent dots -->
+        <circle cx="120" cy="100" r="4" fill="currentColor" opacity="0.2"/>
+        <circle cx="300" cy="90" r="3" fill="currentColor" opacity="0.15"/>
+        <circle cx="90" cy="280" r="5" fill="currentColor" opacity="0.18"/>
+        <circle cx="310" cy="310" r="3.5" fill="currentColor" opacity="0.15"/>
+        <!-- Leaf stems -->
+        <path d="M200 260 Q180 320 140 360" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <path d="M200 260 Q220 320 260 360" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <!-- Small leaves -->
+        <ellipse cx="155" cy="340" rx="12" ry="25" fill="currentColor" opacity="0.15" transform="rotate(-25 155 340)"/>
+        <ellipse cx="245" cy="340" rx="12" ry="25" fill="currentColor" opacity="0.15" transform="rotate(25 245 340)"/>
+      </svg>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Image Side -->
+        <div class="about-image-wrapper reveal">
+          <div class="about-image">
+            <div class="about-image-icon">✿</div>
+          </div>
+          <div class="about-image-badge">
+            <span class="badge-number" data-counter="5" data-suffix="+">0</span>
+            <span class="badge-text">Years of<br>Experience</span>
+          </div>
+        </div>
+        <!-- Text Side -->
+        <div class="about-text">
+          <span class="section-label reveal">About Me</span>
+          <h2 class="section-title reveal reveal-delay-1">Where Code<br>Meets Craft</h2>
+          <p class="reveal reveal-delay-2">
+            I'm a front-end developer with a deep appreciation for design systems, micro-interactions, and the quiet elegance of well-structured code. My work lives at the intersection of engineering precision and creative expression.
+          </p>
+          <p class="reveal reveal-delay-3">
+            Beyond the editor, I'm a creative writer — exploring themes of identity, technology, and human connection through poetry and essays. I believe the best digital experiences are built with the same care we give to our favourite stories.
+          </p>
+          <div class="about-highlights reveal reveal-delay-4">
+            <div class="about-highlight-item">
+              <span class="highlight-icon">🎨</span>
+              <span>UI/UX Design</span>
+            </div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">⚡</span>
+              <span>Performance Focused</span>
+            </div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">✏️</span>
+              <span>Creative Writing</span>
+            </div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">🌿</span>
+              <span>Accessible Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="floral-divider reveal" aria-hidden="true">❀ · ❀ · ❀</div>
+      <div class="stats-bar">
+        <div class="stat-item reveal">
+          <div class="stat-number" data-counter="40" data-suffix="+">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number" data-counter="25" data-suffix="+">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number" data-counter="12" data-suffix="">0</div>
+          <div class="stat-label">Published Pieces</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number" data-counter="3" data-suffix="">0</div>
+          <div class="stat-label">Awards Won</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Skills & Tools</span>
+        <h2 class="section-title">My Toolkit</h2>
+        <p class="section-subtitle">Technologies and disciplines I've refined over years of building for the web.</p>
+      </div>
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="skill-card reveal">
+          <div class="skill-icon">🖥️</div>
+          <h3>Front-End Development</h3>
+          <p>Building responsive, accessible, and performant user interfaces with modern frameworks.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Vue</span>
+          </div>
+        </div>
+        <!-- Skill 2 -->
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-icon">🎨</div>
+          <h3>Design Systems</h3>
+          <p>Crafting cohesive component libraries and design tokens that scale across products.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Storybook</span>
+            <span class="skill-tag">CSS-in-JS</span>
+          </div>
+        </div>
+        <!-- Skill 3 -->
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon">✨</div>
+          <h3>Animation & Motion</h3>
+          <p>Adding life to interfaces with purposeful animations and smooth transitions.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">GSAP</span>
+            <span class="skill-tag">Framer Motion</span>
+            <span class="skill-tag">CSS Animations</span>
+          </div>
+        </div>
+        <!-- Skill 4 -->
+        <div class="skill-card reveal reveal-delay-3">
+          <div class="skill-icon">📱</div>
+          <h3>Responsive Design</h3>
+          <p>Fluid layouts that feel native on every screen size and device.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">CSS Grid</span>
+            <span class="skill-tag">Flexbox</span>
+            <span class="skill-tag">Container Queries</span>
+          </div>
+        </div>
+        <!-- Skill 5 -->
+        <div class="skill-card reveal reveal-delay-4">
+          <div class="skill-icon">⚙️</div>
+          <h3>Dev Tooling</h3>
+          <p>Optimizing workflows with modern build tools, testing, and CI/CD pipelines.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Webpack</span>
+            <span class="skill-tag">Jest</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+        <!-- Skill 6 -->
+        <div class="skill-card reveal reveal-delay-5">
+          <div class="skill-icon">✏️</div>
+          <h3>Creative Writing</h3>
+          <p>Exploring ideas through poetry, essays, and long-form storytelling with care for voice and rhythm.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Poetry</span>
+            <span class="skill-tag">Essays</span>
+            <span class="skill-tag">Copywriting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Selected Work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">A curated selection of projects that blend clean engineering with thoughtful design.</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <div class="project-image-placeholder gradient-1">🌸</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Web Application</span>
+            <h3>Bloom — Habit Tracker</h3>
+            <p>A serene habit-tracking app that uses botanical metaphors. Users grow a digital garden as they build positive routines.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Supabase</span>
+              <span>Framer Motion</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Live Demo ↗</a>
+              <a href="#" class="project-link">Source Code ↗</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project 2 -->
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <div class="project-image-placeholder gradient-2">🌊</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Design System</span>
+            <h3>Ripple — Component Library</h3>
+            <p>A design system with 50+ accessible components, built with composability and theming at its core.</p>
+            <div class="project-tech">
+              <span>Vue 3</span>
+              <span>Storybook</span>
+              <span>CSS Custom Props</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Documentation ↗</a>
+              <a href="#" class="project-link">Source Code ↗</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project 3 -->
+        <article class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <div class="project-image-placeholder gradient-3">📝</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Personal Project</span>
+            <h3>Marginalia — Writing Platform</h3>
+            <p>A minimal publishing platform for long-form essays and poetry, designed around focused reading and beautiful typography.</p>
+            <div class="project-tech">
+              <span>Next.js</span>
+              <span>MDX</span>
+              <span>Vercel</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Visit Site ↗</a>
+              <a href="#" class="project-link">Source Code ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== WRITING ===================== -->
+  <section id="writing">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Words & Thoughts</span>
+        <h2 class="section-title">Writing</h2>
+        <p class="section-subtitle">Selected pieces where I explore the space between technology and the human experience.</p>
+      </div>
+      <div class="writing-grid">
+        <!-- Writing 1 -->
+        <article class="writing-card reveal">
+          <span class="writing-type">📖 Essay</span>
+          <h3>The Architecture of Attention</h3>
+          <p class="writing-excerpt">"We build interfaces the way cities build parks — hoping that if the space is right, people will linger, breathe, and find something unexpected."</p>
+          <div class="writing-meta">
+            <span>📅 Mar 2026</span>
+            <span>⏱️ 8 min read</span>
+          </div>
+        </article>
+        <!-- Writing 2 -->
+        <article class="writing-card reveal reveal-delay-1">
+          <span class="writing-type">🌿 Poetry</span>
+          <h3>Syntax of Silence</h3>
+          <p class="writing-excerpt">"Between the semicolons, there is breath — / a pause where meaning gathers like morning light / on surfaces we built to last, / not knowing beauty was the point."</p>
+          <div class="writing-meta">
+            <span>📅 Jan 2026</span>
+            <span>⏱️ 3 min read</span>
+          </div>
+        </article>
+        <!-- Writing 3 -->
+        <article class="writing-card reveal reveal-delay-2">
+          <span class="writing-type">💭 Reflection</span>
+          <h3>Designing for Impermanence</h3>
+          <p class="writing-excerpt">"The best digital products, like the best conversations, leave room for change. Rigidity is the enemy of resonance."</p>
+          <div class="writing-meta">
+            <span>📅 Nov 2025</span>
+            <span>⏱️ 6 min read</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Have a project in mind, or just want to say hello? I'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info reveal reveal-delay-1">
+          <h3>Let's build something<br>beautiful together.</h3>
+          <p>I'm always open to new opportunities, collaborations, and interesting conversations. Whether it's a full project or a friendly chat about design and writing — reach out.</p>
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <span class="contact-channel-icon">✉️</span>
+              <div>
+                <div class="contact-channel-label">Email</div>
+                <div class="contact-channel-value">hello@portfolio.dev</div>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <span class="contact-channel-icon">📍</span>
+              <div>
+                <div class="contact-channel-label">Location</div>
+                <div class="contact-channel-value">Available Worldwide</div>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <span class="contact-channel-icon">💼</span>
+              <div>
+                <div class="contact-channel-label">Status</div>
+                <div class="contact-channel-value">Open to opportunities</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Form -->
+        <form class="contact-form reveal reveal-delay-2" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-subject">Subject</label>
+            <input type="text" id="form-subject" placeholder="What's this about?">
+          </div>
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" placeholder="Tell me about your project or idea..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message ✨</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-left">
+        <span class="footer-tagline">Crafted with logic. Designed with imagination.</span>
+        <span class="footer-copy">© 2026 Portfolio. Built with care.</span>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" aria-label="GitHub">
+          <span>🔗</span>
+        </a>
+        <a href="#" class="footer-social" aria-label="Twitter">
+          <span>🐦</span>
+        </a>
+        <a href="#" class="footer-social" aria-label="LinkedIn">
+          <span>💼</span>
+        </a>
+        <a href="#" class="footer-social" aria-label="Codepen">
+          <span>⚡</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
