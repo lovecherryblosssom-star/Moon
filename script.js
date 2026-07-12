@@ -2,57 +2,48 @@
    PORTFOLIO — script.js
    "Crafted with logic. Designed with imagination."
 
-   Everything runs inside one DOMContentLoaded listener so the
-   page's elements are guaranteed to exist before we query them.
-   Sections are numbered to match the CSS file's structure.
+   Numbered sections match style.css where relevant.
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
      1. PAGE LOADER
-     Hides the loading screen shortly after everything has loaded.
      ---------------------------------------------------------- */
   const loader = document.querySelector('.page-loader');
   window.addEventListener('load', () => {
-    setTimeout(() => loader?.classList.add('hidden'), 500);
+    setTimeout(() => loader?.classList.add('hidden'), 600);
   });
-  // Fallback: if the load event already fired before this script ran
   if (document.readyState === 'complete') {
-    setTimeout(() => loader?.classList.add('hidden'), 500);
+    setTimeout(() => loader?.classList.add('hidden'), 600);
   }
 
   /* ----------------------------------------------------------
-     2. THEME TOGGLE (light / dark)
-     Reads/writes localStorage so the choice persists on reload.
+     2. THEME TOGGLE
      ---------------------------------------------------------- */
-  const themeToggle = document.getElementById('themeToggle');
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = themeToggle?.querySelector('.theme-icon');
   const htmlEl = document.documentElement;
 
-  function setTheme(theme) {
-    htmlEl.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+  function setTheme(dark) {
+    htmlEl.setAttribute('data-theme', dark ? 'dark' : 'light');
+    if (themeIcon) themeIcon.textContent = dark ? '☀️' : '🌙';
+    localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
   }
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setTheme('dark');
-  }
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(savedTheme ? savedTheme === 'dark' : prefersDark);
 
   themeToggle?.addEventListener('click', () => {
-    const current = htmlEl.getAttribute('data-theme');
-    setTheme(current === 'dark' ? 'light' : 'dark');
+    setTheme(htmlEl.getAttribute('data-theme') !== 'dark');
   });
 
   /* ----------------------------------------------------------
-     3. SCROLL PROGRESS BAR + NAVBAR SCROLLED STATE
-     One scroll listener handles both, so we're not attaching
-     multiple listeners that all read/write layout separately.
+     3. SCROLL PROGRESS BAR + NAVBAR SCROLLED STATE + BACK TO TOP
      ---------------------------------------------------------- */
   const progressBar = document.querySelector('.progress-bar');
-  const navbar = document.querySelector('.navbar');
+  const navbar = document.getElementById('navbar');
   const backToTop = document.querySelector('.back-to-top');
 
   function handleScroll() {
@@ -65,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop?.classList.toggle('visible', scrollTop > 500);
   }
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // run once on load in case the page opens mid-scroll
+  handleScroll();
 
   backToTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -74,28 +65,26 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ----------------------------------------------------------
      4. MOBILE NAVIGATION
      ---------------------------------------------------------- */
-  const mobileToggle = document.querySelector('.nav-mobile-toggle');
-  const navLinksWrap = document.querySelector('.nav-links');
+  const mobileToggle = document.getElementById('nav-mobile-toggle');
+  const navLinksWrap = document.getElementById('nav-links');
 
   mobileToggle?.addEventListener('click', () => {
     mobileToggle.classList.toggle('active');
-    navLinksWrap?.classList.toggle('open');
+    navLinksWrap?.classList.toggle('active');
   });
 
-  // Close the mobile menu whenever a nav link is clicked
-  document.querySelectorAll('.nav-links a').forEach(link => {
+  document.querySelectorAll('#nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       mobileToggle?.classList.remove('active');
-      navLinksWrap?.classList.remove('open');
+      navLinksWrap?.classList.remove('active');
     });
   });
 
   /* ----------------------------------------------------------
      5. ACTIVE NAV LINK ON SCROLL
-     Uses IntersectionObserver instead of manual scroll math.
      ---------------------------------------------------------- */
   const sections = document.querySelectorAll('section[id]');
-  const navLinkEls = document.querySelectorAll('.nav-links a');
+  const navLinkEls = document.querySelectorAll('#nav-links a');
 
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -111,30 +100,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
      6. SCROLL REVEAL
-     Any element with class="reveal" fades/slides in once.
      ---------------------------------------------------------- */
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target); // only animate once
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
   revealEls.forEach(el => revealObserver.observe(el));
 
   /* ----------------------------------------------------------
-     7. HERO TYPING EFFECT
-     Cycles through a list of roles in the hero tagline.
+     7. CURSOR GLOW (desktop only)
+     ---------------------------------------------------------- */
+  const cursorGlow = document.querySelector('.cursor-glow');
+  if (cursorGlow && window.matchMedia('(min-width: 768px)').matches) {
+    let glowX = 0, glowY = 0;
+    let targetX = 0, targetY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      cursorGlow.classList.add('active');
+    });
+    document.addEventListener('mouseleave', () => cursorGlow.classList.remove('active'));
+
+    function animateGlow() {
+      glowX += (targetX - glowX) * 0.08;
+      glowY += (targetY - glowY) * 0.08;
+      cursorGlow.style.left = glowX + 'px';
+      cursorGlow.style.top = glowY + 'px';
+      requestAnimationFrame(animateGlow);
+    }
+    requestAnimationFrame(animateGlow);
+  }
+
+  /* ----------------------------------------------------------
+     8. HERO TYPING EFFECT
+     Cycles the word after "Currently a " in the hero description.
      ---------------------------------------------------------- */
   const typingEl = document.querySelector('.typing-text');
   const typingWords = [
-    'building responsive websites',
-    'designing thoughtful interfaces',
-    'writing poetry & fiction',
-    'learning modern web development'
+    'front-end developer',
+    'UI/UX enthusiast',
+    'creative writer',
+    'lifelong learner'
   ];
 
   if (typingEl) {
@@ -144,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function typeEffect() {
       const currentWord = typingWords[wordIndex];
-      let typeSpeed = isDeleting ? 40 : 80;
+      let speed = isDeleting ? 35 : 70;
 
       if (isDeleting) {
         typingEl.textContent = currentWord.substring(0, charIndex - 1);
@@ -155,36 +168,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 1800; // pause at the end of the word
+        speed = 1800;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % typingWords.length;
-        typeSpeed = 400;
+        speed = 400;
       }
 
-      setTimeout(typeEffect, typeSpeed);
+      setTimeout(typeEffect, speed);
     }
-
     typeEffect();
   }
 
   /* ----------------------------------------------------------
-     8. ANIMATED STAT COUNTERS
-     Elements need: class="stat-number" data-target="27"
+     9. ANIMATED COUNTERS
+     Matches elements with data-counter="N" data-suffix="...".
+     The "Student" stat has no data-counter, so it's skipped safely.
      ---------------------------------------------------------- */
-  const counters = document.querySelectorAll('[data-target]');
+  const counters = document.querySelectorAll('[data-counter]');
 
   function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
   function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-target'), 10);
+    const target = parseInt(el.getAttribute('data-counter'), 10);
+    if (Number.isNaN(target)) return;
     const suffix = el.getAttribute('data-suffix') || '';
     const duration = 1800;
-    const startTime = performance.now();
+    const start = performance.now();
 
     function update(now) {
-      const progress = Math.min((now - startTime) / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       const eased = easeOutQuart(progress);
       el.textContent = Math.round(eased * target) + suffix;
       if (progress < 1) requestAnimationFrame(update);
@@ -204,54 +218,49 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(counter => counterObserver.observe(counter));
 
   /* ----------------------------------------------------------
-     9. TESTIMONIAL SLIDER
+     10. SKILL CARD + PROJECT CARD TILT
+     A subtle 3D tilt that follows the cursor, only on desktop.
+     Used for both the "My Toolkit" cards and the project cards.
      ---------------------------------------------------------- */
-  const track = document.querySelector('.testimonials-slides');
-  const dots = document.querySelectorAll('.testimonial-dot');
-  let currentSlide = 0;
-  let autoSlideTimer;
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    const tiltCards = document.querySelectorAll('.project-card, .skill-card');
 
-  function goToSlide(index) {
-    const totalSlides = dots.length;
-    currentSlide = (index + totalSlides) % totalSlides; // wraps around both ways
-    if (track) track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
-  }
+    tiltCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'box-shadow var(--transition)';
+      });
 
-  function startAutoSlide() {
-    autoSlideTimer = setInterval(() => goToSlide(currentSlide + 1), 6000);
-  }
-  function stopAutoSlide() {
-    clearInterval(autoSlideTimer);
-  }
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -4;
+        const rotateY = ((x - centerX) / centerX) * 4;
 
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      goToSlide(parseInt(dot.getAttribute('data-index'), 10));
-      stopAutoSlide();
-      startAutoSlide();
+        card.style.transform =
+          `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 0.5s ease, box-shadow var(--transition)';
+        card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+      });
     });
-  });
-
-  if (track && dots.length) {
-    startAutoSlide();
-    const wrapper = document.querySelector('.testimonials-wrapper');
-    wrapper?.addEventListener('mouseenter', stopAutoSlide);
-    wrapper?.addEventListener('mouseleave', startAutoSlide);
   }
 
   /* ----------------------------------------------------------
-     10. CONTACT FORM (front-end only demo — no server yet)
+     11. CONTACT FORM (front-end only demo)
      ---------------------------------------------------------- */
-  const contactForm = document.getElementById('contactForm');
+  const contactForm = document.getElementById('contact-form');
 
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const submitBtn = contactForm.querySelector('.form-submit');
     const originalText = submitBtn.textContent;
 
-    submitBtn.textContent = 'Message sent ✓';
+    submitBtn.textContent = 'Message Sent! ✨';
     submitBtn.disabled = true;
 
     setTimeout(() => {
