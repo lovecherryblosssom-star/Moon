@@ -4,415 +4,484 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of a front-end developer and creative writer — crafted with logic, designed with imagination.">
+  <meta name="keywords" content="front-end developer, portfolio, creative writer, web development, UI design">
   <meta name="author" content="Noor">
-  <title>Noor — Front-End Developer &amp; Creative Writer</title>
+  <title>Noor — Crafted with Logic. Designed with Imagination.</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
 </head>
 <body>
-
-  <!-- Page loader: shown briefly on first load, hidden by script.js -->
+  <!-- Page Loader -->
   <div class="page-loader" aria-hidden="true">
-    <span class="loader-mark">✿</span>
+    <div class="loader-content">
+      <div class="loader-flower">✿</div>
+      <p class="loader-text">Crafted with logic. Designed with imagination.</p>
+    </div>
   </div>
-
-  <!-- Fills left-to-right as the visitor scrolls down the page -->
+  <!-- Progress Bar -->
   <div class="progress-bar" aria-hidden="true"></div>
-
-  <!-- ============ NAVIGATION ============ -->
-  <nav class="navbar">
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <!-- Floating Background Shapes -->
+  <div class="floating-shapes" aria-hidden="true">
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+  </div>
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="nav-logo"><span class="dot">●</span> Noor</a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <span class="sun-icon">☀️</span>
-          <span class="moon-icon">🌙</span>
-        </button>
-        <button class="nav-mobile-toggle" aria-label="Open menu">
-          <span></span><span></span><span></span>
+      <a href="#home" class="nav-logo">
+        <span class="logo-dot"></span> Noor
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
         </button>
       </div>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
-
-  <!-- ============ HERO ============ -->
-  <header class="hero">
-    <div class="container hero-container">
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="container">
       <div class="hero-content">
-        <p class="hero-eyebrow">👋 Hello, I'm Noor.</p>
-        <h1 class="hero-name">Building with <span class="accent">Code</span> &amp; Words</h1>
-        <p class="hero-tagline">I'm currently <span class="typing-text"></span></p>
-        <p class="hero-description">
-          A front-end development student who treats code the same way I treat a first draft —
-          worth rewriting until it feels right. Based in Lahore, building things that are
-          equal parts logical and expressive.
+        <p class="hero-greeting reveal">
+          <span class="wave">👋</span> Hello, I'm Noor.
         </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View my work</a>
-          <a href="#contact" class="btn btn-secondary">Get in touch</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-image-frame">
-          <!-- Abstract graphic — swap for a real photo later if you'd like by
-               replacing this <svg> with an <img> tag, same as before -->
-          <svg class="hero-abstract" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <radialGradient id="blobGold" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" style="stop-color: var(--gold); stop-opacity: 0.55" />
-                <stop offset="100%" style="stop-color: var(--gold); stop-opacity: 0" />
-              </radialGradient>
-              <radialGradient id="blobMauve" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" style="stop-color: var(--mauve); stop-opacity: 0.6" />
-                <stop offset="100%" style="stop-color: var(--mauve); stop-opacity: 0" />
-              </radialGradient>
-            </defs>
-            <circle class="hero-abstract-blob hero-abstract-blob-1" cx="180" cy="210" r="170" fill="url(#blobMauve)" />
-            <circle class="hero-abstract-blob hero-abstract-blob-2" cx="310" cy="420" r="150" fill="url(#blobGold)" />
-            <g class="hero-abstract-orbit">
-              <circle class="hero-abstract-ring" cx="240" cy="300" r="150" fill="none" stroke="var(--gold)" stroke-opacity="0.35" stroke-width="1" />
-              <circle class="hero-abstract-dot" cx="240" cy="150" r="4" fill="var(--gold)" />
-            </g>
-          </svg>
+        <h1 class="hero-name reveal reveal-delay-1">
+          A <span class="accent">Developer</span><br>& Writer
+        </h1>
+        <p class="hero-tagline reveal reveal-delay-2">
+          Crafted with logic. Designed with imagination.
+        </p>
+        <p class="hero-description reveal reveal-delay-3">
+          I build thoughtful, expressive interfaces where clean code meets creative storytelling.
+          Currently a <span class="typing-text" aria-label="front-end developer">front-end developer</span><span class="typing-cursor" aria-hidden="true">|</span>
+        </p>
+        <div class="hero-cta reveal reveal-delay-4">
+          <a href="#projects" class="btn-primary">
+            View My Work <span aria-hidden="true">→</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            Get In Touch
+          </a>
         </div>
       </div>
     </div>
-  </header>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="section" id="about">
+    <!-- Hero Floral Decoration -->
+    <div class="hero-floral reveal reveal-delay-2" aria-hidden="true">
+      <img src="hero.jpg" alt="Abstract Illustration">
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="reveal">
-          <span class="section-label">About</span>
-          <h2 class="section-title">A little about me</h2>
+        <!-- Image Side -->
+        <div class="about-image-wrapper reveal">
+          <div class="about-image">
+            <div class="about-image-icon">✿</div>
+          </div>
+          <div class="about-image-badge">
+            <span class="badge-number" data-counter="5" data-suffix="+">0</span>
+            <span class="badge-text">Years of<br>Experience</span>
+          </div>
         </div>
-
-        <div class="about-card reveal reveal-delay-1">
-          <div class="about-text">
-            <p>
-              I'm Noor — a front-end web development student learning HTML, CSS, and
-              JavaScript, with a particular soft spot for UI design. I care about the small
-              details: the way a hover state feels, the rhythm of type on a page, the moment
-              an animation lands just right.
-            </p>
-            <p>
-              Outside of code, I write — poetry, short fiction, the occasional essay. I like
-              projects that let both sides of me show up at once: logical structure paired
-              with a strong aesthetic point of view.
-            </p>
-          </div>
-
-          <div class="about-highlights">
-            <div class="about-highlight-item"><span class="icon">🎨</span> Design-forward builds</div>
-            <div class="about-highlight-item"><span class="icon">✍️</span> Creative writing</div>
-            <div class="about-highlight-item"><span class="icon">💻</span> HTML / CSS / JS</div>
-            <div class="about-highlight-item"><span class="icon">📍</span> Lahore, Pakistan</div>
-          </div>
-
-          <div class="stats-bar">
-            <div class="stat-item">
-              <div class="stat-number" data-target="8">0</div>
-              <div class="stat-label">GitHub repositories</div>
+        <!-- Text Side -->
+        <div class="about-text">
+          <span class="section-label reveal">About Me</span>
+          <h2 class="section-title reveal reveal-delay-1">Where Code<br>Meets Craft</h2>
+          <p class="reveal reveal-delay-2">
+            I'm a front-end web development student with a deep appreciation for UI design, micro-interactions, and creating thoughtful experiences. My work lives at the intersection of logical problem solving and creative expression.
+          </p>
+          <p class="reveal reveal-delay-3">
+            Beyond the editor, I'm a creative writer — exploring themes of identity and human connection. I believe the best digital experiences are built with the same care we give to our favorite stories.
+          </p>
+          <div class="about-highlights reveal reveal-delay-4">
+            <div class="about-highlight-item">
+              <span class="highlight-icon">🎨</span>
+              <span>UI/UX Design</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="2">0</div>
-              <div class="stat-label">Completed projects</div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">⚡</span>
+              <span>Performance Focused</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="3">0</div>
-              <div class="stat-label">Projects in progress</div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">✏️</span>
+              <span>Creative Writing</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">🎓</div>
-              <div class="stat-label">Front-end web dev student</div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">🌿</span>
+              <span>Accessible Design</span>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="floral-divider reveal" aria-hidden="true">❀ · ❀ · ❀</div>
+      <div class="stats-bar">
+        <div class="stat-item reveal">
+          <div class="stat-number" data-counter="8" data-suffix="">0</div>
+          <div class="stat-label">GitHub Repositories</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number" data-counter="2" data-suffix="">0</div>
+          <div class="stat-label">Completed Projects</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number" data-counter="3" data-suffix="">0</div>
+          <div class="stat-label">Projects in Progress</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number" style="font-size: 1.5rem; display: flex; align-items: center; justify-content: center; height: 100%;">Student</div>
+          <div class="stat-label">Front-End Web Dev</div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section class="section" id="skills">
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Skills</span>
-        <h2 class="section-title">What I work with</h2>
-        <p class="section-subtitle">The tools I reach for most, still growing every week.</p>
+      <div class="reveal">
+        <span class="section-label">Skills & Tools</span>
+        <h2 class="section-title">My Toolkit</h2>
+        <p class="section-subtitle">Technologies and disciplines I've refined over years of building for the web.</p>
       </div>
-
       <div class="skills-grid">
+        <!-- Skill 1 -->
         <div class="skill-card reveal">
-          <div class="skill-icon">🧱</div>
-          <h3>HTML</h3>
-          <p>Semantic, accessible structure as the foundation for everything else.</p>
+          <div class="skill-icon">🖥️</div>
+          <h3>Front-End Development</h3>
+          <p>Building responsive, accessible, and performant user interfaces with modern frameworks.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Vue</span>
+          </div>
         </div>
+        <!-- Skill 2 -->
         <div class="skill-card reveal reveal-delay-1">
           <div class="skill-icon">🎨</div>
-          <h3>CSS</h3>
-          <p>Layout, animation, and design systems built from custom properties.</p>
+          <h3>Design Systems</h3>
+          <p>Crafting cohesive component libraries and design tokens that scale across products.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Storybook</span>
+            <span class="skill-tag">CSS-in-JS</span>
+          </div>
         </div>
+        <!-- Skill 3 -->
         <div class="skill-card reveal reveal-delay-2">
-          <div class="skill-icon">⚡</div>
-          <h3>JavaScript</h3>
-          <p>Interactivity — from form logic to scroll-based animation.</p>
+          <div class="skill-icon">✨</div>
+          <h3>Animation & Motion</h3>
+          <p>Adding life to interfaces with purposeful animations and smooth transitions.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">GSAP</span>
+            <span class="skill-tag">Framer Motion</span>
+            <span class="skill-tag">CSS Animations</span>
+          </div>
         </div>
+        <!-- Skill 4 -->
         <div class="skill-card reveal reveal-delay-3">
-          <div class="skill-icon">✍️</div>
-          <h3>Writing</h3>
-          <p>Clear, considered language — in interfaces and on the page.</p>
+          <div class="skill-icon">📱</div>
+          <h3>Responsive Design</h3>
+          <p>Fluid layouts that feel native on every screen size and device.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">CSS Grid</span>
+            <span class="skill-tag">Flexbox</span>
+            <span class="skill-tag">Container Queries</span>
+          </div>
+        </div>
+        <!-- Skill 5 -->
+        <div class="skill-card reveal reveal-delay-4">
+          <div class="skill-icon">⚙️</div>
+          <h3>Dev Tooling</h3>
+          <p>Optimizing workflows with modern build tools, testing, and CI/CD pipelines.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Webpack</span>
+            <span class="skill-tag">Jest</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+        <!-- Skill 6 -->
+        <div class="skill-card reveal reveal-delay-5">
+          <div class="skill-icon">✏️</div>
+          <h3>Creative Writing</h3>
+          <p>Exploring ideas through poetry, essays, and long-form storytelling with care for voice and rhythm.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Poetry</span>
+            <span class="skill-tag">Essays</span>
+            <span class="skill-tag">Copywriting</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section class="section" id="projects">
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Projects</span>
-        <h2 class="section-title">Selected work</h2>
-        <p class="section-subtitle">A few things I've built recently.</p>
+      <div class="reveal">
+        <span class="section-label">Selected Work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">A curated selection of projects that blend clean engineering with thoughtful design.</p>
       </div>
-
       <div class="projects-grid">
+        <!-- Project 1 -->
         <article class="project-card reveal">
           <div class="project-image">
-            <img src="https://placehold.co/600x375/2A2242/C9A86A?text=Nyx" alt="Screenshot of Nyx, a creative writing portfolio">
+            <div class="project-image-placeholder gradient-1">🖋️</div>
           </div>
           <div class="project-body">
-            <span class="project-category">Creative Writing Portfolio</span>
-            <h3 class="project-title">Nyx</h3>
-            <p class="project-desc">A home for my poetry and short fiction — quiet, typography-led, built to let the writing lead.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
+            <div class="project-category-wrapper">
+              <span class="project-category">Completed</span>
             </div>
-            <a href="#" class="project-link">View project →</a>
+            <h3>Nyx</h3>
+            <p>A minimalist and immersive creative writing portfolio designed to showcase poetry and short fiction with elegance.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project ↗</a>
+            </div>
           </div>
         </article>
-
+        <!-- Project 2 -->
         <article class="project-card reveal reveal-delay-1">
           <div class="project-image">
-            <img src="https://placehold.co/600x375/2A2242/C9A86A?text=Portfolio" alt="Screenshot of my personal developer portfolio">
+            <div class="project-image-placeholder gradient-2">✨</div>
           </div>
           <div class="project-body">
-            <span class="project-category">Personal Site</span>
-            <h3 class="project-title">Personal Developer Portfolio</h3>
-            <p class="project-desc">This site — designed and built from scratch as a space to bring together my code and my writing.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
+            <div class="project-category-wrapper">
+              <span class="project-category">Completed</span>
             </div>
-            <a href="#" class="project-link">View project →</a>
+            <h3>Personal Developer Portfolio</h3>
+            <p>A premium, interactive web portfolio built to reflect a balance between logical development and creative design.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project ↗</a>
+            </div>
           </div>
         </article>
-
+        <!-- Project 3 -->
         <article class="project-card reveal reveal-delay-2">
           <div class="project-image">
-            <span class="wip-badge">Work in Progress</span>
-            <img src="https://placehold.co/600x375/2A2242/9C82B5?text=Qui%C3%A9reme" alt="Screenshot of Quiéreme, a luxury perfume e-commerce site">
+            <div class="project-image-placeholder gradient-3">💎</div>
           </div>
           <div class="project-body">
-            <span class="project-category">E-Commerce</span>
-            <h3 class="project-title">Quiéreme</h3>
-            <p class="project-desc">A luxury perfume brand and e-commerce site — collection browsing, a scent finder quiz, and a discovery set builder.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
+            <div class="project-category-wrapper">
+              <span class="project-category">E-commerce</span>
+              <span class="wip-badge">Work in Progress</span>
             </div>
-            <a href="#" class="project-link">View project →</a>
+            <h3>Quiéreme</h3>
+            <p>A luxury perfume e-commerce website featuring a refined visual language, smooth animations, and an intuitive shopping experience.</p>
+            <div class="project-tech">
+              <span>Next.js</span>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Coming Soon ↗</a>
+            </div>
           </div>
         </article>
-
-        <article class="project-card reveal">
+        <!-- Project 4 -->
+        <article class="project-card reveal reveal-delay-3">
           <div class="project-image">
-            <span class="wip-badge">Work in Progress</span>
-            <img src="https://placehold.co/600x375/2A2242/C9A86A?text=Rose+Berry+Haze" alt="Screenshot of Rose Berry Haze, a dessert boutique site">
+            <div class="project-image-placeholder gradient-1" style="background: linear-gradient(135deg, #fbcfe8, #fda4af, #fecdd3);">🍓</div>
           </div>
           <div class="project-body">
-            <span class="project-category">Website</span>
-            <h3 class="project-title">Rose Berry Haze</h3>
-            <p class="project-desc">A dessert boutique website with a soft, artisanal feel — built for a Lahore-based concept brand.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
+            <div class="project-category-wrapper">
+              <span class="project-category">Web Application</span>
+              <span class="wip-badge">Work in Progress</span>
             </div>
-            <a href="#" class="project-link">View project →</a>
+            <h3>Rose Berry Haze</h3>
+            <p>A beautifully sweet and engaging dessert website showcasing artisanal treats with mouth-watering photography and design.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>CSS Modules</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Coming Soon ↗</a>
+            </div>
           </div>
         </article>
-
-        <article class="project-card reveal reveal-delay-1">
+        <!-- Project 5 -->
+        <article class="project-card reveal reveal-delay-4">
           <div class="project-image">
-            <span class="wip-badge">Work in Progress</span>
-            <img src="https://placehold.co/600x375/2A2242/9C82B5?text=Aether" alt="Screenshot of Aether, an interactive travel website">
+            <div class="project-image-placeholder gradient-2" style="background: linear-gradient(135deg, #bae6fd, #7dd3fc, #38bdf8);">✈️</div>
           </div>
           <div class="project-body">
-            <span class="project-category">Web App</span>
-            <h3 class="project-title">Aether</h3>
-            <p class="project-desc">A single-page travel site featuring 100 destinations, with filtering, search, and modal detail views.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
+            <div class="project-category-wrapper">
+              <span class="project-category">Web Application</span>
+              <span class="wip-badge">Work in Progress</span>
             </div>
-            <a href="#" class="project-link">View project →</a>
+            <h3>Aether</h3>
+            <p>An interactive travel website designed to inspire exploration with stunning visuals, seamless navigation, and engaging storytelling.</p>
+            <div class="project-tech">
+              <span>Vue</span>
+              <span>Framer Motion</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Coming Soon ↗</a>
+            </div>
           </div>
         </article>
       </div>
     </div>
   </section>
-
-  <!-- ============ WRITING ============ -->
-  <section class="section" id="writing">
+  <!-- ===================== WRITING ===================== -->
+  <section id="writing">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Writing</span>
-        <h2 class="section-title">Words, too</h2>
-        <p class="section-subtitle">A few pieces of creative writing I'm proud of.</p>
+      <div class="reveal">
+        <span class="section-label">Words & Thoughts</span>
+        <h2 class="section-title">Writing</h2>
+        <p class="section-subtitle">Selected pieces where I explore the space between technology and the human experience.</p>
       </div>
-
       <div class="writing-grid">
-        <!-- Replace the title, excerpt, and meta below with your own poem -->
+        <!-- Writing 1 -->
         <article class="writing-card reveal">
-          <span class="writing-type">Poetry</span>
-          <h3 class="writing-title">[Your Poem Title]</h3>
-          <p class="writing-excerpt">"Drop in a line or two from the piece — enough to give a reader the feel of it."</p>
-          <div class="writing-meta">Add read time</div>
-        </article>
-
-        <!-- Replace with your own short story -->
-        <article class="writing-card reveal reveal-delay-1">
-          <span class="writing-type">Short Fiction</span>
-          <h3 class="writing-title">[Your Story Title]</h3>
-          <p class="writing-excerpt">"Drop in an opening line or a favorite excerpt from the story."</p>
-          <div class="writing-meta">Add read time</div>
-        </article>
-
-        <!-- Replace with your own essay -->
-        <article class="writing-card reveal reveal-delay-2">
-          <span class="writing-type">Essay</span>
-          <h3 class="writing-title">[Your Essay Title]</h3>
-          <p class="writing-excerpt">"Drop in a line that captures what the essay is about."</p>
-          <div class="writing-meta">Add read time</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Testimonials</span>
-        <h2 class="section-title">What people say</h2>
-      </div>
-
-      <div class="testimonials-wrapper reveal">
-        <div class="testimonials-track">
-          <div class="testimonials-slides">
-            <div class="testimonial-slide">
-              <div class="testimonial-inner">
-                <span class="testimonial-quote-mark">"</span>
-                <p class="testimonial-text">A thoughtful quote about working with you goes here.</p>
-                <p class="testimonial-author">Person One</p>
-                <p class="testimonial-role">Their role</p>
-              </div>
-            </div>
-            <div class="testimonial-slide">
-              <div class="testimonial-inner">
-                <span class="testimonial-quote-mark">"</span>
-                <p class="testimonial-text">Another thoughtful quote goes here.</p>
-                <p class="testimonial-author">Person Two</p>
-                <p class="testimonial-role">Their role</p>
-              </div>
-            </div>
+          <span class="writing-type">📖 Fiction</span>
+          <h3>Echoes of the City</h3>
+          <p class="writing-excerpt">"The neon lights reflected off the rain-slicked pavement, a fractured mirror of a city that never slept, but only dreamed in fragments of code and unspoken desires."</p>
+          <div class="writing-meta">
+            <span>📅 May 2026</span>
+            <span>⏱️ 10 min read</span>
           </div>
-        </div>
-        <div class="testimonial-dots">
-          <button class="testimonial-dot active" data-index="0" aria-label="Show testimonial 1"></button>
-          <button class="testimonial-dot" data-index="1" aria-label="Show testimonial 2"></button>
-        </div>
+        </article>
+        <!-- Writing 2 -->
+        <article class="writing-card reveal reveal-delay-1">
+          <span class="writing-type">🌿 Poetry</span>
+          <h3>The Last Summer</h3>
+          <p class="writing-excerpt">"Golden hours stretched into twilight / We chased the sun until it hid behind the mountains / Leaving us with only the warmth of memories / And the quiet promise of autumn."</p>
+          <div class="writing-meta">
+            <span>📅 Feb 2026</span>
+            <span>⏱️ 2 min read</span>
+          </div>
+        </article>
+        <!-- Writing 3 -->
+        <article class="writing-card reveal reveal-delay-2">
+          <span class="writing-type">💭 Reflection</span>
+          <h3>Fragments of Code</h3>
+          <p class="writing-excerpt">"In every function, there is a narrative. In every algorithm, a heartbeat. We are not just instructing machines; we are translating human logic into a language of light."</p>
+          <div class="writing-meta">
+            <span>📅 Nov 2025</span>
+            <span>⏱️ 5 min read</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="section" id="contact">
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
     <div class="container">
+      <div class="reveal">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Have a project in mind, or just want to say hello? I'd love to hear from you.</p>
+      </div>
       <div class="contact-grid">
-        <div class="contact-info reveal">
-          <span class="section-label">Contact</span>
-          <h3>Let's talk</h3>
-          <p>Have a project in mind, or just want to say hi? My inbox is open.</p>
+        <!-- Info -->
+        <div class="contact-info reveal reveal-delay-1">
+          <h3>Let's build something<br>beautiful together.</h3>
+          <p>I'm always open to new opportunities, collaborations, and interesting conversations. Whether it's a full project or a friendly chat about design and writing — reach out.</p>
           <div class="contact-channels">
             <div class="contact-channel">
               <span class="contact-channel-icon">✉️</span>
               <div>
                 <div class="contact-channel-label">Email</div>
-                <div class="contact-channel-value">you@example.com</div>
+                <div class="contact-channel-value">hello@portfolio.dev</div>
               </div>
             </div>
             <div class="contact-channel">
               <span class="contact-channel-icon">📍</span>
               <div>
                 <div class="contact-channel-label">Location</div>
-                <div class="contact-channel-value">Lahore, Pakistan</div>
+                <div class="contact-channel-value">Available Worldwide</div>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <span class="contact-channel-icon">💼</span>
+              <div>
+                <div class="contact-channel-label">Status</div>
+                <div class="contact-channel-value">Open to opportunities</div>
               </div>
             </div>
           </div>
         </div>
-
-        <form class="contact-form reveal reveal-delay-1" id="contactForm">
+        <!-- Form -->
+        <form class="contact-form reveal reveal-delay-2" id="contact-form">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" required>
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" placeholder="Your name" required>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" required>
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" placeholder="you@example.com" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" required></textarea>
+            <label for="form-subject">Subject</label>
+            <input type="text" id="form-subject" placeholder="What's this about?">
           </div>
-          <button type="submit" class="btn btn-primary form-submit">Send message</button>
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" placeholder="Tell me about your project or idea..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message ✨</button>
         </form>
       </div>
     </div>
   </section>
-
-  <!-- ============ FOOTER ============ -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-tagline">Crafted with logic. Designed with imagination.</p>
-      <div class="footer-socials">
-        <a href="#" class="footer-social" aria-label="GitHub">🔗</a>
-        <a href="#" class="footer-social" aria-label="LinkedIn">💼</a>
-        <a href="#" class="footer-social" aria-label="Instagram">📷</a>
+      <div class="footer-left">
+        <span class="footer-tagline">Crafted with logic. Designed with imagination.</span>
+        <span class="footer-copy">© 2026 Noor. Built with care.</span>
       </div>
-      <p class="footer-copy">© 2026 Noor</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" aria-label="GitHub">
+          <span>🔗</span>
+        </a>
+        <a href="#" class="footer-social" aria-label="Twitter">
+          <span>🐦</span>
+        </a>
+        <a href="#" class="footer-social" aria-label="LinkedIn">
+          <span>💼</span>
+        </a>
+        <a href="#" class="footer-social" aria-label="Codepen">
+          <span>⚡</span>
+        </a>
+      </div>
     </div>
   </footer>
-
+  <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top">↑</button>
-
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
