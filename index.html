@@ -11,6 +11,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
 </head>
 <body>
+
   <!-- Page Loader -->
   <div class="page-loader" aria-hidden="true">
     <div class="loader-content">
@@ -18,10 +19,13 @@
       <p class="loader-text">Crafted with logic. Designed with imagination.</p>
     </div>
   </div>
+
   <!-- Progress Bar -->
   <div class="progress-bar" aria-hidden="true"></div>
+
   <!-- Cursor Glow -->
   <div class="cursor-glow" aria-hidden="true"></div>
+
   <!-- Floating Background Shapes -->
   <div class="floating-shapes" aria-hidden="true">
     <div class="floating-shape"></div>
@@ -29,12 +33,14 @@
     <div class="floating-shape"></div>
     <div class="floating-shape"></div>
   </div>
+
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#home" class="nav-logo">
         <span class="logo-dot"></span> Noor
       </a>
+
       <div class="nav-links" id="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -46,6 +52,7 @@
           <span class="theme-icon">🌙</span>
         </button>
       </div>
+
       <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -53,6 +60,7 @@
       </button>
     </div>
   </nav>
+
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="home">
     <div class="container">
@@ -68,7 +76,7 @@
         </p>
         <p class="hero-description reveal reveal-delay-3">
           I build thoughtful, expressive interfaces where clean code meets creative storytelling.
-          Currently a <span class="typing-text" aria-label="front-end developer">front-end developer</span><span class="typing-cursor" aria-hidden="true">|</span>
+          Currently <span class="typing-text" aria-label="Building responsive websites">Building responsive websites</span><span class="typing-cursor" aria-hidden="true">|</span>
         </p>
         <div class="hero-cta reveal reveal-delay-4">
           <a href="#projects" class="btn-primary">
@@ -80,15 +88,41 @@
         </div>
       </div>
     </div>
+
     <!-- Hero Floral Decoration -->
-    <div class="hero-floral reveal reveal-delay-2" aria-hidden="true">
-      <img src="hero.jpg" alt="Abstract Illustration">
+    <div class="hero-floral" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Petal cluster 1 -->
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.3" transform="rotate(0 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(45 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.2" transform="rotate(90 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(135 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.3" transform="rotate(180 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(225 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.2" transform="rotate(270 200 200)"/>
+        <ellipse cx="200" cy="140" rx="45" ry="80" fill="currentColor" opacity="0.25" transform="rotate(315 200 200)"/>
+        <!-- Center -->
+        <circle cx="200" cy="200" r="22" fill="currentColor" opacity="0.35"/>
+        <!-- Small accent dots -->
+        <circle cx="120" cy="100" r="4" fill="currentColor" opacity="0.2"/>
+        <circle cx="300" cy="90" r="3" fill="currentColor" opacity="0.15"/>
+        <circle cx="90" cy="280" r="5" fill="currentColor" opacity="0.18"/>
+        <circle cx="310" cy="310" r="3.5" fill="currentColor" opacity="0.15"/>
+        <!-- Leaf stems -->
+        <path d="M200 260 Q180 320 140 360" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <path d="M200 260 Q220 320 260 360" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <!-- Small leaves -->
+        <ellipse cx="155" cy="340" rx="12" ry="25" fill="currentColor" opacity="0.15" transform="rotate(-25 155 340)"/>
+        <ellipse cx="245" cy="340" rx="12" ry="25" fill="currentColor" opacity="0.15" transform="rotate(25 245 340)"/>
+      </svg>
     </div>
+
     <div class="hero-scroll-hint" aria-hidden="true">
       <span>Scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
+
   <!-- ===================== ABOUT ===================== -->
   <section id="about">
     <div class="container">
@@ -99,20 +133,22 @@
             <div class="about-image-icon">✿</div>
           </div>
           <div class="about-image-badge">
-            <span class="badge-number" data-counter="5" data-suffix="+">0</span>
-            <span class="badge-text">Years of<br>Experience</span>
+            <span class="badge-number" data-counter="1" data-suffix="+">0</span>
+            <span class="badge-text">Year<br>Learning</span>
           </div>
         </div>
+
         <!-- Text Side -->
         <div class="about-text">
           <span class="section-label reveal">About Me</span>
           <h2 class="section-title reveal reveal-delay-1">Where Code<br>Meets Craft</h2>
           <p class="reveal reveal-delay-2">
-            I'm a front-end web development student with a deep appreciation for UI design, micro-interactions, and creating thoughtful experiences. My work lives at the intersection of logical problem solving and creative expression.
+            I'm a front-end web development student with a deep appreciation for UI design, micro-interactions, and the quiet elegance of well-structured code. My work lives at the intersection of logical problem-solving and creative expression.
           </p>
           <p class="reveal reveal-delay-3">
-            Beyond the editor, I'm a creative writer — exploring themes of identity and human connection. I believe the best digital experiences are built with the same care we give to our favorite stories.
+            Beyond the editor, I'm a creative writer — exploring themes of identity and human connection through poetry and short fiction. I believe the best digital experiences are built with the same care we give to our favourite stories.
           </p>
+
           <div class="about-highlights reveal reveal-delay-4">
             <div class="about-highlight-item">
               <span class="highlight-icon">🎨</span>
@@ -133,8 +169,10 @@
           </div>
         </div>
       </div>
+
       <!-- Stats -->
       <div class="floral-divider reveal" aria-hidden="true">❀ · ❀ · ❀</div>
+
       <div class="stats-bar">
         <div class="stat-item reveal">
           <div class="stat-number" data-counter="8" data-suffix="">0</div>
@@ -149,12 +187,13 @@
           <div class="stat-label">Projects in Progress</div>
         </div>
         <div class="stat-item reveal reveal-delay-3">
-          <div class="stat-number" style="font-size: 1.5rem; display: flex; align-items: center; justify-content: center; height: 100%;">Student</div>
+          <div class="stat-number" style="font-size: 1.5rem;">Student</div>
           <div class="stat-label">Front-End Web Dev</div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- ===================== SKILLS ===================== -->
   <section id="skills">
     <div class="container">
@@ -163,6 +202,7 @@
         <h2 class="section-title">My Toolkit</h2>
         <p class="section-subtitle">Technologies and disciplines I've refined over years of building for the web.</p>
       </div>
+
       <div class="skills-grid">
         <!-- Skill 1 -->
         <div class="skill-card reveal">
@@ -176,6 +216,7 @@
             <span class="skill-tag">Vue</span>
           </div>
         </div>
+
         <!-- Skill 2 -->
         <div class="skill-card reveal reveal-delay-1">
           <div class="skill-icon">🎨</div>
@@ -187,6 +228,7 @@
             <span class="skill-tag">CSS-in-JS</span>
           </div>
         </div>
+
         <!-- Skill 3 -->
         <div class="skill-card reveal reveal-delay-2">
           <div class="skill-icon">✨</div>
@@ -198,6 +240,7 @@
             <span class="skill-tag">CSS Animations</span>
           </div>
         </div>
+
         <!-- Skill 4 -->
         <div class="skill-card reveal reveal-delay-3">
           <div class="skill-icon">📱</div>
@@ -209,6 +252,7 @@
             <span class="skill-tag">Container Queries</span>
           </div>
         </div>
+
         <!-- Skill 5 -->
         <div class="skill-card reveal reveal-delay-4">
           <div class="skill-icon">⚙️</div>
@@ -221,6 +265,7 @@
             <span class="skill-tag">Git</span>
           </div>
         </div>
+
         <!-- Skill 6 -->
         <div class="skill-card reveal reveal-delay-5">
           <div class="skill-icon">✏️</div>
@@ -235,6 +280,7 @@
       </div>
     </div>
   </section>
+
   <!-- ===================== PROJECTS ===================== -->
   <section id="projects">
     <div class="container">
@@ -243,106 +289,111 @@
         <h2 class="section-title">Projects</h2>
         <p class="section-subtitle">A curated selection of projects that blend clean engineering with thoughtful design.</p>
       </div>
+
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1 — Completed -->
         <article class="project-card reveal">
           <div class="project-image">
             <div class="project-image-placeholder gradient-1">🖋️</div>
           </div>
           <div class="project-body">
-            <div class="project-category-wrapper">
-              <span class="project-category">Completed</span>
-            </div>
-            <h3>Nyx</h3>
-            <p>A minimalist and immersive creative writing portfolio designed to showcase poetry and short fiction with elegance.</p>
+            <span class="project-category">Completed</span>
+            <h3>Nyx — Creative Writing Portfolio</h3>
+            <p>A minimalist, immersive space designed to showcase poetry and short fiction with elegance and focus.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JavaScript</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link">View Project ↗</a>
+              <a href="#" class="project-link">Live Demo ↗</a>
+              <a href="#" class="project-link">Source Code ↗</a>
             </div>
           </div>
         </article>
-        <!-- Project 2 -->
+
+        <!-- Project 2 — Completed -->
         <article class="project-card reveal reveal-delay-1">
           <div class="project-image">
-            <div class="project-image-placeholder gradient-2">✨</div>
+            <div class="project-image-placeholder gradient-2">💻</div>
           </div>
           <div class="project-body">
-            <div class="project-category-wrapper">
-              <span class="project-category">Completed</span>
-            </div>
+            <span class="project-category">Completed</span>
             <h3>Personal Developer Portfolio</h3>
-            <p>A premium, interactive web portfolio built to reflect a balance between logical development and creative design.</p>
+            <p>This site — designed and built from scratch as a space to bring together my code and my writing.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JavaScript</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link">View Project ↗</a>
+              <a href="#" class="project-link">Live Demo ↗</a>
+              <a href="#" class="project-link">Source Code ↗</a>
             </div>
           </div>
         </article>
-        <!-- Project 3 -->
+
+        <!-- Project 3 — Work in Progress -->
         <article class="project-card reveal reveal-delay-2">
           <div class="project-image">
-            <div class="project-image-placeholder gradient-3">💎</div>
+            <div class="project-image-placeholder gradient-3">🌸</div>
           </div>
           <div class="project-body">
             <div class="project-category-wrapper">
-              <span class="project-category">E-commerce</span>
+              <span class="project-category">E-Commerce</span>
               <span class="wip-badge">Work in Progress</span>
             </div>
-            <h3>Quiéreme</h3>
-            <p>A luxury perfume e-commerce website featuring a refined visual language, smooth animations, and an intuitive shopping experience.</p>
+            <h3>Quiéreme — Luxury Perfume E-commerce</h3>
+            <p>A luxury perfume brand and shopping experience, with collection browsing and an editorial visual language.</p>
             <div class="project-tech">
-              <span>Next.js</span>
-              <span>Tailwind CSS</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
             </div>
             <div class="project-links">
               <a href="#" class="project-link">Coming Soon ↗</a>
             </div>
           </div>
         </article>
-        <!-- Project 4 -->
+
+        <!-- Project 4 — Work in Progress -->
         <article class="project-card reveal reveal-delay-3">
           <div class="project-image">
-            <div class="project-image-placeholder gradient-1" style="background: linear-gradient(135deg, #fbcfe8, #fda4af, #fecdd3);">🍓</div>
+            <div class="project-image-placeholder gradient-1">🍓</div>
           </div>
           <div class="project-body">
             <div class="project-category-wrapper">
-              <span class="project-category">Web Application</span>
+              <span class="project-category">Website</span>
               <span class="wip-badge">Work in Progress</span>
             </div>
-            <h3>Rose Berry Haze</h3>
-            <p>A beautifully sweet and engaging dessert website showcasing artisanal treats with mouth-watering photography and design.</p>
+            <h3>Rose Berry Haze — Dessert Website</h3>
+            <p>A soft, artisanal dessert boutique website built for a Lahore-based concept brand.</p>
             <div class="project-tech">
-              <span>React</span>
-              <span>CSS Modules</span>
+              <span>HTML</span>
+              <span>CSS</span>
             </div>
             <div class="project-links">
               <a href="#" class="project-link">Coming Soon ↗</a>
             </div>
           </div>
         </article>
-        <!-- Project 5 -->
+
+        <!-- Project 5 — Work in Progress -->
         <article class="project-card reveal reveal-delay-4">
           <div class="project-image">
-            <div class="project-image-placeholder gradient-2" style="background: linear-gradient(135deg, #bae6fd, #7dd3fc, #38bdf8);">✈️</div>
+            <div class="project-image-placeholder gradient-2">✈️</div>
           </div>
           <div class="project-body">
             <div class="project-category-wrapper">
               <span class="project-category">Web Application</span>
               <span class="wip-badge">Work in Progress</span>
             </div>
-            <h3>Aether</h3>
-            <p>An interactive travel website designed to inspire exploration with stunning visuals, seamless navigation, and engaging storytelling.</p>
+            <h3>Aether — Interactive Travel Website</h3>
+            <p>A single-page travel site featuring 100 destinations, with live filtering, search, and modal detail views.</p>
             <div class="project-tech">
-              <span>Vue</span>
-              <span>Framer Motion</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
             </div>
             <div class="project-links">
               <a href="#" class="project-link">Coming Soon ↗</a>
@@ -352,6 +403,7 @@
       </div>
     </div>
   </section>
+
   <!-- ===================== WRITING ===================== -->
   <section id="writing">
     <div class="container">
@@ -360,40 +412,44 @@
         <h2 class="section-title">Writing</h2>
         <p class="section-subtitle">Selected pieces where I explore the space between technology and the human experience.</p>
       </div>
+
       <div class="writing-grid">
-        <!-- Writing 1 -->
+        <!-- Replace title, excerpt, and meta below with your own essay -->
         <article class="writing-card reveal">
-          <span class="writing-type">📖 Fiction</span>
-          <h3>Echoes of the City</h3>
-          <p class="writing-excerpt">"The neon lights reflected off the rain-slicked pavement, a fractured mirror of a city that never slept, but only dreamed in fragments of code and unspoken desires."</p>
+          <span class="writing-type">📖 Essay</span>
+          <h3>[Your Essay Title]</h3>
+          <p class="writing-excerpt">"Drop in a line that captures what the essay is about."</p>
           <div class="writing-meta">
-            <span>📅 May 2026</span>
-            <span>⏱️ 10 min read</span>
+            <span>📅 Add date</span>
+            <span>⏱️ Add read time</span>
           </div>
         </article>
-        <!-- Writing 2 -->
+
+        <!-- Replace with your own poem -->
         <article class="writing-card reveal reveal-delay-1">
           <span class="writing-type">🌿 Poetry</span>
-          <h3>The Last Summer</h3>
-          <p class="writing-excerpt">"Golden hours stretched into twilight / We chased the sun until it hid behind the mountains / Leaving us with only the warmth of memories / And the quiet promise of autumn."</p>
+          <h3>[Your Poem Title]</h3>
+          <p class="writing-excerpt">"Drop in a line or two from the piece — enough to give a reader the feel of it."</p>
           <div class="writing-meta">
-            <span>📅 Feb 2026</span>
-            <span>⏱️ 2 min read</span>
+            <span>📅 Add date</span>
+            <span>⏱️ Add read time</span>
           </div>
         </article>
-        <!-- Writing 3 -->
+
+        <!-- Replace with your own short story or reflection -->
         <article class="writing-card reveal reveal-delay-2">
           <span class="writing-type">💭 Reflection</span>
-          <h3>Fragments of Code</h3>
-          <p class="writing-excerpt">"In every function, there is a narrative. In every algorithm, a heartbeat. We are not just instructing machines; we are translating human logic into a language of light."</p>
+          <h3>[Your Piece Title]</h3>
+          <p class="writing-excerpt">"Drop in an opening line or a favorite excerpt from the piece."</p>
           <div class="writing-meta">
-            <span>📅 Nov 2025</span>
-            <span>⏱️ 5 min read</span>
+            <span>📅 Add date</span>
+            <span>⏱️ Add read time</span>
           </div>
         </article>
       </div>
     </div>
   </section>
+
   <!-- ===================== CONTACT ===================== -->
   <section id="contact">
     <div class="container">
@@ -402,11 +458,13 @@
         <h2 class="section-title">Let's Connect</h2>
         <p class="section-subtitle">Have a project in mind, or just want to say hello? I'd love to hear from you.</p>
       </div>
+
       <div class="contact-grid">
         <!-- Info -->
         <div class="contact-info reveal reveal-delay-1">
           <h3>Let's build something<br>beautiful together.</h3>
           <p>I'm always open to new opportunities, collaborations, and interesting conversations. Whether it's a full project or a friendly chat about design and writing — reach out.</p>
+
           <div class="contact-channels">
             <div class="contact-channel">
               <span class="contact-channel-icon">✉️</span>
@@ -431,6 +489,7 @@
             </div>
           </div>
         </div>
+
         <!-- Form -->
         <form class="contact-form reveal reveal-delay-2" id="contact-form">
           <div class="form-row">
@@ -456,6 +515,7 @@
       </div>
     </div>
   </section>
+
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container">
@@ -479,8 +539,10 @@
       </div>
     </div>
   </footer>
+
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top">↑</button>
+
   <!-- Scripts -->
   <script src="script.js"></script>
 </body>
