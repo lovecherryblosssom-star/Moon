@@ -255,10 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingEl = document.querySelector('.typing-text');
   if (typingEl) {
     const words = [
-      'Building responsive websites',
-      'Designing thoughtful interfaces',
-      'Writing poetry & fiction',
-      'Learning modern web development'
+      'building responsive websites',
+      'designing thoughtful interfaces',
+      'writing poetry & fiction',
+      'learning modern web development'
     ];
     let wordIndex = 0;
     let charIndex = 0;
