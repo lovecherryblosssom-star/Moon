@@ -375,6 +375,12 @@ section {
   transform: rotate(20deg) scale(1.05);
 }
 
+.theme-toggle img.theme-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  object-fit: contain;
+}
+
 /* Mobile toggle */
 .nav-mobile-toggle {
   display: none;
