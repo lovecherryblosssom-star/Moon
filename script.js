@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setTheme(dark) {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-    if (themeIcon) themeIcon.textContent = dark ? '☀️' : '🌙';
+    if (themeIcon) themeIcon.src = dark ? 'icon-moon.png' : 'icon-n.png';
     localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
   }
 
